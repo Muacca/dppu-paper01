@@ -9,14 +9,14 @@
 ## 概要
 
 このリポジトリは、DPPU プロジェクトにおける第一論文  
-「Microscopic Handles in Teleparallel Gravity」の
+「Microscopic Handles in Teleparallel Gravity（日本語訳：テレパラレル重力における微視的ハンドル）」の
 
 - 論文本体の LaTeX ソース（本文＋付録）
 - Appendix E で用いた SymPy スクリプトとそのログ
 
 を公開するためのものです。
 
-第一論文では、テレパラレル重力（TEGR）の枠組みの中で、トーショナル単極電荷をもつ微視的ハンドル（$S^2 \times S^1$ ）を用いて、
+第一論文では、テレパラレル重力（TEGR）の枠組みの中で、トーショナル単極電荷をもつ微視的ハンドル（ $S^2 \times S^1$ ）を用いて、
 
 - 安定なハンドル半径と $E \propto |q|$ な質量スケール
 - Nieh–Yan 項を介したカイラリティ（左右非対称性）の選択
