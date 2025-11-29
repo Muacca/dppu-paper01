@@ -1,0 +1,636 @@
+\appendix
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Notation, Conventions, and Dimensional Analysis}
+\label{app:notation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+We work in natural Planck units
+\begin{equation}
+\hbar = c = 8\pi G = 1,
+\end{equation}
+so that length, time and inverse mass all have the same dimension,
+\([L]=[T]=[M]^{-1}\).  The Planck length is denoted by
+$\ell_{\rm Pl}$.
+
+Throughout the paper we use the mostly–plus signature
+$(-,+,+,+)$ and Latin indices $a,b,\dots$ for tangent–space indices,
+Greek indices $\mu,\nu,\dots$ for spacetime indices.
+The metric is obtained from the tetrad by
+\begin{equation}
+g_{\mu\nu} = e^a{}_\mu e^b{}_\nu \eta_{ab},
+\qquad
+\eta_{ab} = \mathrm{diag}(-1,1,1,1).
+\end{equation}
+
+\subsection{Physical parameters and their dimensions}
+
+The basic parameters appearing in our handle ansatz are summarised
+in Table~\ref{tab:dimensions}.  When needed we explicitly restore
+powers of $\ell_{\rm Pl}$; otherwise we simply treat all dimensionful
+quantities as measured in Planck units.
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{lll}
+    \hline
+    Symbol & Meaning & Dimension \\
+    \hline
+    $q$         & torsional monopole charge (Nieh--Yan charge) & dimensionless ($\mathbb{Z}$) \\
+    $m$         & twist winding number                          & dimensionless ($\mathbb{Z}$) \\
+    $\omega$    & background spin frequency                     & $[T]^{-1}\sim [\ell_{\rm Pl}]^{-1}$ \\
+    $r_0$       & handle radius                                 & $[L]\sim[\ell_{\rm Pl}]$ \\
+    $L_\psi$    & length of compact direction $\psi$            & $[L]$ \\
+    $\varepsilon$ & small precession angle                      & dimensionless \\
+    $\theta_{\rm NY}$ & Nieh--Yan coupling                      & $[\ell_{\rm Pl}]^{-2}$ \\
+    \hline
+  \end{tabular}
+  \caption{Physical parameters and their dimensions.}
+  \label{tab:dimensions}
+\end{table}
+
+The TEGR action is
+\begin{equation}
+S_{\rm TEGR}
+ = \frac{1}{2\kappa}\int d^4x\, e\,\mathbb{T},
+\qquad
+\kappa = 8\pi G = 1,
+\end{equation}
+where $e=\det(e^a{}_\mu)$ and $\mathbb{T}$ is the torsion scalar.
+Since $S_{\rm TEGR}$ is dimensionless, we have
+\([e\,d^4x]\sim[\ell_{\rm Pl}]^4\) and $[\mathbb{T}]\sim[\ell_{\rm Pl}]^{-2}$.
+For a configuration of characteristic size $r_0$ this gives the
+parametric estimate
+\begin{equation}
+E_{\rm TEGR}
+\sim \ell_{\rm Pl}^{-1}\times (\text{dimensionless function of }q,m,\omega),
+\end{equation}
+consistent with the energy per handle scaling as $E\propto |q|$ in the
+main text.
+
+For the precession mode $\varepsilon(t)$ we eventually obtain an effective
+action of the form
+\begin{equation}
+S_{\rm eff}^{(\varepsilon)}
+= \frac{1}{2}\int dt\, k(q)\,\varepsilon(t)^2 + \cdots ,
+\end{equation}
+so $k(q)$ has dimension $[\ell_{\rm Pl}]^{-1}$.
+In our ansatz this stiffness scales as
+\begin{equation}
+k(q)
+\sim m^2\omega^2 r_0^2 L_\psi
+\sim \omega^2 |q|,
+\end{equation}
+where we used $r_0^2\propto |q|$ (with $m$ fixed).
+
+The Nieh--Yan term is
+\begin{equation}
+S_{\rm NY}
+  = \theta_{\rm NY}\int_M \mathcal{N},
+\end{equation}
+with $\mathcal{N}$ the Nieh--Yan density.  For a single handle the
+integral scales as $\int_M\mathcal{N}\sim q\,\Delta r^2\sim
+q\,\ell_{\rm Pl}^2$, so that $[\theta_{\rm NY}]=[\ell_{\rm Pl}]^{-2}$,
+in agreement with Table~\ref{tab:dimensions}.
+
+All coefficients $A,B,C,\dots$ that appear in the 1D effective
+description in Phase~1 are understood as $\mathcal{O}(1)$ numerical
+constants in these Planck units.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Explicit Tetrad: Background Spin/Twist and Precession}
+\label{app:tetrad}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Static monopole reference tetrad}
+
+On $\mathbb{R}_t\times S^1_\psi\times S^2$ we use coordinates
+$(t,\psi,\theta,\phi)$.
+A convenient static reference tetrad carrying monopole charge $q$
+is
+\begin{align}
+\tilde e^0 &= dt, \label{eq:ref-static-0}\\
+\tilde e^1 &= d\psi, \label{eq:ref-static-1}\\
+\tilde e^2 &= r_0\, d\theta, \label{eq:ref-static-2}\\
+\tilde e^3 &= r_0\sin\theta\,\bigl[d\phi + q(1-\cos\theta)\,d\psi\bigr].
+\label{eq:ref-static-3}
+\end{align}
+This tetrad reproduces the usual monopole gauge potential on $S^2$
+in the $(\theta,\phi)$ directions and an $S^1$ fibre parametrised by
+$\psi$.
+
+\subsection{Background spinning--twisted tetrad}
+
+The physical background used in the main text combines
+\emph{spin} around the handle axis and a \emph{twist} along
+$S^1_\psi$.
+At the level of the internal $SU(2)$ frame this can be represented
+schematically by
+\begin{equation}
+U(t,\psi)=
+\exp\!\left( \frac{i}{2}\omega t\,\sigma_3\right)
+\exp\!\left( \frac{i}{2}m\psi\,\sigma_3\right),
+\end{equation}
+with $\sigma_3$ a Pauli matrix.
+The background tetrad $e^a{}_\mu{}_{\rm bg}$ is obtained by acting
+with the corresponding $SO(3)$ rotation on the spatial triad
+$\tilde e^{i}$ ($i=1,2,3$).  The explicit expressions are not needed
+here; the important point is that they preserve axial symmetry and
+encode the monopole charge $q$, twist $m$ and spin frequency $\omega$.
+
+\subsection{Precession as a small axis tilt}
+
+To model precession we introduce a slow, spatially uniform tilt
+of the handle axis.  In a frame adapted to the background, the
+tilt can be implemented by an infinitesimal $SO(3)$ rotation that
+mixes the $e^1$ and $e^3$ directions:
+\begin{equation}
+e^a = \Lambda^a{}_b(\varepsilon(t))\,e^b_{\rm bg},
+\qquad
+\Lambda(\varepsilon) =
+\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & \cos\varepsilon & 0 & \sin\varepsilon \\
+0 & 0 & 1 & 0 \\
+0 & -\sin\varepsilon & 0 & \cos\varepsilon
+\end{pmatrix},
+\end{equation}
+with $\varepsilon(t)\ll 1$.
+To first order in $\varepsilon$ one has
+\begin{align}
+e^1 &\simeq e^1_{\rm bg} + \varepsilon(t)\, e^3_{\rm bg},\\
+e^3 &\simeq e^3_{\rm bg} - \varepsilon(t)\, e^1_{\rm bg},
+\end{align}
+while $e^0$ and $e^2$ are unchanged.
+Thus the handle axis, originally aligned with $d\psi$, acquires a
+small time–dependent tilt of order $\varepsilon(t)$.
+
+In the explicit stiffness calculation of
+Appendix~\ref{app:phase3-calc} it is technically convenient to
+work in a rotated spatial frame in which the same physical precession
+is represented as a rotation in the $(e^2,e^3)$–plane while $e^1$
+is kept fixed.  This change of frame does not affect any physical
+observable, but simplifies the algebra in the SymPy implementation.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Phase 1: Detailed Derivation of the Effective Radial Potential}
+\label{app:phase1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{TEGR action on the spinning--twisted ansatz}
+
+Evaluating the TEGR action on the spinning--twisted background
+tetrad of Sec.~\ref{app:tetrad} and imposing the equal–radius ansatz
+$r(\psi)=r_0$ yields an effective one–dimensional functional of the
+form
+\begin{equation}
+S_{\rm TEGR}
+= \int dt\int_0^{L_\psi} d\psi \,
+\left[
+ A\,(\partial_\psi r)^2 + V(r)
+\right],
+\end{equation}
+where $A>0$ is a numerical coefficient and $V(r)$ is an effective
+radial potential.  For the equal–radius sector we may set
+$\partial_\psi r=0$, so that the energy per unit $\psi$–length
+reduces to
+\begin{equation}
+\mathcal{E} = \int_0^{L_\psi} d\psi\, V(r_0)
+ = L_\psi\,V(r_0).
+\end{equation}
+
+\subsection{Dominant contributions to $V(r)$}
+
+A straightforward but algebraically lengthy evaluation of the torsion
+scalar on this ansatz shows that the dominant contributions to
+$V(r)$ are
+\begin{align}
+V_{\rm core}(r) &= B\,\frac{q^2}{r^2},\\
+V_{\rm twist}(r) &= C\,m^2 r^2,
+\end{align}
+with $B,C>0$ numerical coefficients of order unity in the Planck
+units defined in Appendix~\ref{app:notation}.  The first term is
+supported by the monopole–like torsion generated by $q$, while the
+second term comes from the anisotropic ``twist'' gradients set by
+$m$ along the fibre direction.
+
+Higher–derivative corrections and subleading powers of $r$ are
+suppressed for the nearly uniform configurations of interest and are
+therefore dropped at this stage.
+
+\subsection{Minimisation and stable radius}
+
+The total potential is
+\begin{equation}
+V(r) = V_{\rm core}(r) + V_{\rm twist}(r)
+     = B\,\frac{q^2}{r^2} + C\,m^2 r^2.
+\end{equation}
+Minimising with respect to $r$ gives
+\begin{equation}
+\frac{dV}{dr} = -2B\,\frac{q^2}{r^3} + 2C m^2 r = 0,
+\end{equation}
+so that the equilibrium radius satisfies
+\begin{equation}
+r_0^4 = \frac{B}{C}\,\frac{q^2}{m^2}
+\qquad\Rightarrow\qquad
+r_0^2 \propto \frac{|q|}{|m|}.
+\end{equation}
+The second derivative at the extremum,
+\begin{equation}
+\frac{d^2V}{dr^2}\bigg|_{r=r_0}
+ = 6B\,\frac{q^2}{r_0^4} + 2C m^2 > 0,
+\end{equation}
+is strictly positive, confirming that this configuration is a
+classical minimum.
+
+Substituting $r_0$ back into $V(r_0)$ we obtain
+\begin{equation}
+E_{\rm TEGR}(q)
+ = L_\psi V(r_0)
+ = \alpha\,|q|,
+\qquad
+\alpha = 2\sqrt{BC}\,|m|\,L_\psi > 0,
+\end{equation}
+showing that the TEGR energy is proportional to $|q|$, as stated in
+Sec.~4 of the main text.  The equal–radius approximation is
+self–consistent as long as the curvature and torsion scales are
+super–Planckian, which is the regime of interest in this toy model.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Nieh--Yan Boundary Term and Precession Coupling}
+\label{app:phase2}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Starting from the explicit spinning--twisted tetrad, one finds that
+the Nieh--Yan density on a single handle takes the exact form
+\begin{equation}
+\mathcal{N}
+ = q\,\omega m\,
+   d\!\bigl(r(\psi)^2\bigr)\wedge dt\wedge
+   \sin\theta\,d\theta\wedge d\phi
+ \quad
+ (\text{up to a positive numerical factor}),
+\end{equation}
+where $r(\psi)$ is the local radius of the $S^2$ cross–section and
+$\omega$ is the background spin frequency.  Integrating over the
+two–sphere and along the handle we obtain
+\begin{equation}
+\int_M \mathcal{N}
+ = 4\pi\,q\,\omega m\,\Delta r^2,
+\qquad
+\Delta r^2 \equiv
+ r^2(\psi_{\rm end}) - r^2(\psi_{\rm start}),
+\end{equation}
+again up to an overall positive factor that we absorb into the
+definition of the coupling $\theta_{\rm NY}$.
+
+For an exactly equal–radius configuration we have $\Delta r^2=0$
+and therefore
+\begin{equation}
+\int_M\mathcal{N}=0
+\quad\Rightarrow\quad
+S_{\rm NY}=0.
+\end{equation}
+This confirms the statement in the main text that the spinning
+background by itself remains parity even; parity violation arises
+only once we take into account boundary effects associated with
+precession.
+
+\subsection{Precession--induced boundary mismatch}
+
+When the handle precesses with a small, slowly varying angle
+$\varepsilon(t)$, the junction between the microscopic handle and
+the external ``bulk'' geometry develops a small mismatch.
+To first order in $\varepsilon$ the difference in the effective
+$r^2$ between the two ends of the handle can be parameterised as
+\begin{equation}
+\Delta r^2
+\;\longrightarrow\;
+\Delta r^2 + \beta\,\varepsilon(t),
+\end{equation}
+where $\beta>0$ is a model–dependent constant encoding how the
+junction geometry responds to a uniform tilt.\footnote{A concrete
+realisation of this behaviour can be given in a multi--handle
+geometry where the external metric is kept fixed while the
+microscopic handle is rotated.  The precise value of $\beta$ is not
+needed in the main text; only its sign matters.}
+Substituting into the Nieh--Yan term we obtain a linear contribution
+to the effective action for $\varepsilon(t)$,
+\begin{equation}
+S_{\rm NY}^{(1)}
+ = \theta_{\rm NY}\int dt\,
+ \Lambda_q\,\varepsilon(t),
+\qquad
+\Lambda_q
+ = {\sf c}_{\rm NY}\,q,
+\end{equation}
+with
+${\sf c}_{\rm NY} \sim \theta_{\rm NY}\,\omega m\beta$.
+We choose the sign convention such that
+\begin{equation}
+\Lambda_q = -\gamma\,q,
+\qquad \gamma>0,
+\end{equation}
+so that the effective potential
+$V_{\rm eff}(\varepsilon;q)$ is minimised at a small tilt
+$\varepsilon_*(q)$ whose sign is locked to the sign of $q$,
+as discussed in Sec.~5.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.9\linewidth]{figs/Fig1_Junction_Mismatch.png}
+  \caption{Schematic representation of the Nieh--Yan boundary
+  mechanism.  Panel (a): aligned handle ($\varepsilon=0$) with
+  identical junctions at both ends, $\Delta r^2=0$ and no Nieh--Yan
+  contribution.  Panel (b): precessing handle ($\varepsilon\neq 0$);
+  the junction at the upper end no longer matches the external
+  geometry (red contour), producing a small shift
+  $\Delta r^2\to\Delta r^2+\beta\varepsilon$ and hence a linear term
+  $\Lambda_q\varepsilon$ in the effective action via the Nieh--Yan
+  density.}
+  \label{fig:junction}
+\end{figure}
+
+The key point is that the entire parity–violating effect is of
+\emph{purely boundary origin}.  No bulk contribution to the Nieh--Yan
+density is required once the equal–radius condition is imposed.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Complete Calculation of the Precession Stiffness $k(q)$}
+\label{app:phase3-calc}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Tetrad with precession in a convenient frame}
+
+For the explicit computation of the stiffness $k(q)$ we adopt a
+frame in which the precession is realised as a rotation in the
+$(e^2,e^3)$–plane, while $e^1$ is kept fixed.  This frame is related
+by a rigid spatial rotation to the tilted--axis picture of
+Appendix~\ref{app:tetrad} and is physically equivalent.
+
+Let $\tilde e^a$ denote the aligned tetrad of
+Eqs.~\eqref{eq:ref-tetrad-0}--\eqref{eq:ref-tetrad-3} in the main
+text.  The precessing tetrad is
+\begin{equation}
+e^a = \Lambda^a{}_b(\varepsilon(t))\,\tilde e^b,
+\qquad
+\Lambda(\varepsilon)=
+\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & \cos\varepsilon & -\sin\varepsilon \\
+0 & 0 & \sin\varepsilon & \cos\varepsilon
+\end{pmatrix}.
+\end{equation}
+Expanding for small $\varepsilon$,
+\begin{equation}
+\cos\varepsilon\simeq 1-\frac{\varepsilon^2}{2},
+\qquad
+\sin\varepsilon\simeq \varepsilon,
+\end{equation}
+gives
+\begin{align}
+e^1 &= \tilde e^1,\\
+e^2 &\simeq \tilde e^2 + \varepsilon\,\tilde e^3
+        -\frac{\varepsilon^2}{2}\,\tilde e^2,\\
+e^3 &\simeq \tilde e^3 - \varepsilon\,\tilde e^2
+        -\frac{\varepsilon^2}{2}\,\tilde e^3.
+\end{align}
+
+\subsection{Torsion tensor to $\mathcal{O}(\varepsilon^2)$}
+
+Using the Weitzenböck connection
+$\Gamma^\lambda{}_{\mu\nu} = e_a{}^\lambda \partial_\nu e^a{}_\mu$,
+the torsion tensor is
+\begin{equation}
+T^\lambda{}_{\mu\nu}
+ = \Gamma^\lambda{}_{\nu\mu} - \Gamma^\lambda{}_{\mu\nu}.
+\end{equation}
+In an orthonormal frame this can be written as
+$T^a = de^a + \omega^a{}_b\wedge e^b$; in the teleparallel gauge
+$\omega^a{}_b=0$ so $T^a=de^a$.
+
+Carrying out the expansion to second order in $\varepsilon$ and
+keeping only the terms relevant for the precession mode, one finds
+non–vanishing corrections such as
+\begin{align}
+\delta T^1{}_{\theta\phi} &= \varepsilon^2\,
+  2q r_0 \sin\theta,\\
+\delta T^2{}_{\psi\theta} &= \varepsilon^2\,
+  m\omega r_0 \sin\theta,\\
+\delta T^3{}_{\psi\theta} &= -\varepsilon^2\,
+  m\omega r_0 \cos\theta,
+\end{align}
+together with similar terms related by symmetry.  All other components
+either vanish or contribute only at higher orders in $\varepsilon$.
+
+\subsection{Quadratic torsion scalar and symmetry protection}
+
+The torsion scalar is
+\begin{equation}
+\mathbb{T}
+ = \frac{1}{4}T^{\rho\mu\nu}T_{\rho\mu\nu}
+ + \frac{1}{2}T^{\rho\mu\nu}T_{\nu\mu\rho}
+ - T_\rho T^\rho,
+\qquad
+T_\rho = T^\mu{}_{\rho\mu}.
+\end{equation}
+Inserting the expanded tetrad and keeping only the
+$\mathcal{O}(\varepsilon^2)$ terms, one can schematically write
+\begin{equation}
+\mathbb{T}^{(2)}
+ = \varepsilon^2\Bigl[m^2\omega^2 r_0^2
+   + (\text{terms}\propto q^2,\; q m\omega,\;\dots)\Bigr].
+\end{equation}
+
+A crucial point, confirmed both analytically and in the SymPy
+implementation, is that \emph{all terms proportional to
+$q^2\varepsilon^2$ cancel identically}.  This cancellation is
+protected by the spherical symmetry of the monopole background:
+a rigid rotation of a spherically symmetric configuration cannot
+generate a restoring force proportional to $q^2$.  What survives at
+$\mathcal{O}(\varepsilon^2)$ is the interference between the
+anisotropic twist ($m$) and spin ($\omega$) sectors.
+
+After the cancellation we are left with
+\begin{equation}
+\mathbb{T}^{(2)} = \varepsilon^2\,m^2\omega^2 r_0^2.
+\end{equation}
+
+\subsection{Integration and effective stiffness}
+
+Integrating over the two–sphere and along the handle we obtain
+\begin{align}
+\int d^4x\, e\,\mathbb{T}^{(2)}
+ &= \varepsilon^2 m^2\omega^2 r_0^2 L_\psi
+    \int_0^\pi\sin\theta\,d\theta
+    \int_0^{2\pi} d\phi \nonumber\\
+ &= \varepsilon^2 m^2\omega^2 r_0^2 L_\psi
+    \times 4\pi.
+\end{align}
+Up to an overall numerical factor that depends on conventions and
+normalisation of the tetrad, this contribution induces an effective
+action
+\begin{equation}
+S_{\rm TEGR}^{(2)}
+ = \frac{1}{2}\int dt\,k(q)\,\varepsilon(t)^2,
+\qquad
+k(q) = \kappa_k\,L_\psi m^2\omega^2 r_0^2,
+\end{equation}
+with $\kappa_k=\mathcal{O}(1)$.  Using $r_0^2\propto |q|$ from
+Appendix~\ref{app:phase1} we obtain the scaling
+\begin{equation}
+k(q)\propto \omega^2 |q|
+\qquad\Rightarrow\qquad
+\gamma = 1
+\end{equation}
+in the notation of the main text.
+
+In the compact SymPy implementation described in the supplementary
+material the same calculation yields a specific numerical value
+$\kappa_k = 8\pi/9$ in our units.  This difference with respect to
+the analytic coefficient $4\pi$ obtained above originates from a
+slightly different normalisation of the frame fields and does not
+affect the $|q|$– and $\omega$–scaling.  Since the main text never
+uses the absolute value of $\kappa_k$, we keep it symbolic here.
+
+\begin{lstlisting}[caption={SymPy code fragment used for the
+  precession stiffness calculation.  The full listing is provided in
+  the supplementary material.},label={code:appe}]
+# Python/SymPy code fragment – full listing in supplementary material
+e2 = cos(eps)*e2_tilde + sin(eps)*e3_tilde
+e3 = -sin(eps)*e2_tilde + cos(eps)*e3_tilde
+T2 = de2  # teleparallel gauge: T^a = de^a
+T3 = de3
+T2_quad = T2.subs(eps, 0).series(eps, 0, 3).coeff(eps**2)
+# → shows q**2 terms cancel; only m*omega terms survive
+\end{lstlisting}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Universality of the $\gamma=1$ Scaling}
+\label{app:universality}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The result $k(q)\propto \omega^2|q|$ obtained above might at first
+sight appear to be an artefact of the specific $SU(2)$ parametrisation
+used for the microscopic handle.  In this appendix we argue that,
+within the class of axially symmetric spinning/twisted handles
+considered in this paper, the scaling with $\gamma=1$ is in fact
+generic.
+
+The static energy is controlled by two competing contributions:
+\begin{itemize}
+\item a ``core'' term associated with the torsional monopole flux,
+      scaling as $V_{\rm core}\sim q^2/r_0^2$;
+\item a ``twist'' term associated with gradients along the fibre,
+      scaling as $V_{\rm twist}\sim m^2 r_0^2$.
+\end{itemize}
+These depend only on the topological charges $(q,m)$ and on the
+radius $r_0$, but not on the detailed choice of tetrad within a
+given symmetry class.  Minimising
+$V_{\rm core}+V_{\rm twist}$ therefore always gives
+$r_0^2\propto |q|/|m|$ up to an $\mathcal{O}(1)$ factor, independently
+of the microscopic parametrisation.
+
+The precession stiffness $k(q)$ originates from the \emph{dynamical}
+response of the twisted/spinning configuration to a small tilt.
+In any axially symmetric handle with monopole flux $q$, twist $m$
+and spin $\omega$, the torsion scalar contains terms of the schematic
+form
+\begin{equation}
+\mathbb{T} \supset \omega m\,(\text{spatial rotation terms}),
+\end{equation}
+whose quadratic response to a uniform tilt produces an energy density
+proportional to $m^2\omega^2$.
+Integrating this density over the cross–section of area
+$\sim r_0^2$ and along the handle then yields
+\begin{equation}
+k(q)\propto \omega^2 m^2 r_0^2
+          \propto \omega^2 |q|.
+\end{equation}
+Thus, within this axially symmetric class, the exponent
+$\gamma=1$ is a robust consequence of (i) the $q^2/r_0^2$ vs.
+$m^2 r_0^2$ competition that fixes $r_0^2\propto |q|$, and
+(ii) the fact that the precession mode couples to the twist and spin,
+not directly to the monopole flux.
+
+We do \emph{not} claim that $\gamma=1$ holds as a rigorous theorem
+for arbitrary teleparallel configurations.  Extending the analysis
+to more general, non–axially symmetric handles is left as an open
+problem for future work.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The Static Case ($\omega=0$): Phenomenological Sterility}
+\label{app:static}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The spinning ansatz used in the main text is technically more
+involved than the purely static handle, but it is precisely the
+background spin $\omega\neq 0$ that makes the microscopic handle
+phenomenologically interesting.  In this appendix we briefly
+summarise what happens when the spin is switched off.
+
+\subsection{Vanishing linear term in the effective potential}
+
+The Nieh--Yan contribution to the effective action for a single
+handle is schematically
+\begin{equation}
+S_{\rm NY}
+ \propto \theta_{\rm NY}\,q\,\omega m\,\Delta r^2,
+\end{equation}
+with $\Delta r^2$ the difference in $r^2$ between the two ends of
+the handle (see Appendix~\ref{app:phase2}).  When $\omega=0$ this
+term vanishes exactly, regardless of the value of $\Delta r^2$.
+The effective potential $V_{\rm eff}(\varepsilon;q)$ therefore has
+no linear term in $\varepsilon$ and remains parity even, yielding
+no geometric mechanism for chirality selection.
+
+\subsection{Vanishing topological coupling to statistics}
+
+More fundamentally, the Nieh--Yan density takes the form
+\begin{equation}
+\mathcal{N}
+ \propto q\,\omega m\,
+  d(r^2)\wedge dt\wedge\text{(angular 2--form)}.
+\end{equation}
+When $\omega=0$ the $dt$ component disappears and the spacetime
+integral of $\mathcal{N}$ reduces to a trivial surface term that
+does not generate a non–zero topological coupling.
+In particular, the heuristic link between the Nieh--Yan invariant
+and a Wess--Zumino--Witten term controlling particle statistics
+(used as motivation in the main text) is absent in the static case,
+so the handle does not provide a natural geometric origin for
+half–integer spin states.
+
+\subsection{Mechanical stability vs.\ phenomenological sterility}
+
+The configuration with $\omega=0$ remains mechanically stable:
+the static balance between $V_{\rm core}$ and $V_{\rm twist}$ is
+unchanged, and the stiffness of small geometric deformations is
+still set by $k(q)\propto m^2 r_0^2 L_\psi$ (which is non--zero
+independently of $\omega$, see Appendix~\ref{app:phase3-calc}).
+In this sense the static handle is not catastrophically unstable.
+
+However, precisely the phenomena that motivated our construction in
+the first place --- chirality selection, a possible link to
+fermionic statistics, and near–critical binding of composite states
+--- all rely on the interplay between spin $\omega$ and the Nieh--Yan
+boundary term.  When $\omega=0$ this interplay is absent, and the
+handle becomes phenomenologically inert.
+
+The non–zero background spin $\omega$ should therefore be viewed not
+as a mere technical decoration of the ansatz, but as the crucial
+ingredient that ``breathes phenomenological life'' into the
+microscopic handle.

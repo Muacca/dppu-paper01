@@ -1,0 +1,241 @@
+\section{Phase 1: Stability and energy scaling}
+\label{sec:phase1}
+
+In this section we place the Spinning $SU(2)$ handle ansatz of
+Sec.~\ref{sec:ansatz} into the TEGR action of Sec.~\ref{sec:TEGR}, and
+reduce the dynamics to the single radial degree of freedom $r(\psi)$ in a
+one–dimensional mini–superspace.  We then show that pure TEGR already
+admits a classically stable equal–radius handle solution with a radius
+\begin{equation}
+  r_0 \;\propto\; |q|^{1/2},
+  \qquad
+  \text{(for fixed non-zero twist number $m$)},
+  \label{eq:r0-scaling-intro}
+\end{equation}
+and that the corresponding TEGR energy scales linearly with the absolute
+value of the monopole charge $q$,
+\begin{equation}
+  E_{\text{TEGR}}(q)
+  \;\propto\; |q|,
+  \qquad
+  \text{(again with fixed non-zero $m$)}.
+\end{equation}
+These results provide the $P$–even geometric background for the
+parity–violating effects discussed in Phase~2 and the binding analysis
+in Phase~3.
+
+%------------------------------------------------------------
+\subsection{Effective mini–superspace energy functional}
+\label{subsec:phase1-effective}
+
+We work in pure TEGR,
+\begin{equation}
+  S_{\text{TEGR}}
+  \;=\;
+  \frac{1}{2\kappa^2}
+  \int d^4x\, e\, \mathbb{T},
+\end{equation}
+with Weitzenb\"ock connection and torsion scalar $\mathbb{T}$ as defined in
+Sec.~\ref{sec:TEGR}.  On the local product manifold
+$M \simeq \mathbb{R}_t \times S^1_\psi \times S^2$, the Spinning
+$SU(2)$ handle ansatz of Sec.~\ref{sec:ansatz} reduces the geometric
+degrees of freedom to a single radial function $r(\psi)$ measuring
+the isotropic radius of the $S^2$ cross–section at each point
+along the handle axis $S^1_\psi$.
+
+After inserting the ansatz into $S_{\text{TEGR}}$, averaging over time,
+and integrating over the $S^2$ cross–section, one obtains an effective
+one–dimensional energy functional for $r(\psi)$,
+\begin{equation}
+  E[r]
+  \;=\;
+  \int_0^{L_\psi} d\psi\,
+  \Big[
+    A\,(r')^2 + V(r)
+  \Big],
+  \qquad
+  r' := \frac{dr}{d\psi},
+  \label{eq:effective-energy-functional}
+\end{equation}
+where $L_\psi$ denotes the coordinate length of the handle along the
+$\psi$–direction and $A>0$ is a positive coefficient determined by the
+TEGR normalisation and the detailed tetrad choice.
+The coefficient $A$ arises from axial components of the torsion scalar
+(schematically from terms of the form
+$T^{\psi}{}_{r\psi} T_\psi{}^{r\psi}$, etc.) and is expected to be of
+Planckian magnitude in a UV–complete theory.
+
+The effective potential $V(r)$ for an equal–radius handle takes the form
+\begin{equation}
+  V(r)
+  \;=\;
+  \frac{B\,q^2}{r^2} + C\,m^2 r^2,
+  \qquad B>0,\;C>0,
+  \label{eq:effective-potential}
+\end{equation}
+where
+\begin{itemize}
+  \item $q \in \mathbb{Z}$ is the integer monopole charge associated with
+        the torsion flux through the $S^2$ cross–section, as defined in
+        Sec.~\ref{sec:ansatz};
+  \item $m \in \mathbb{Z}$ is the twist number of the $SU(2)$ rotation
+        along the handle axis;
+  \item $B$ and $C$ are positive constants set by the TEGR coupling
+        and the detailed geometry of the ansatz.
+\end{itemize}
+The first term, $\propto q^2/r^2$, originates from the flux contribution
+to the torsion scalar and behaves as a repulsive ``core'' potential that
+diverges for $r \to 0$.  The second term, $\propto m^2 r^2$, arises from
+the uniform twist along $S^1_\psi$ and plays the rôle of a tension or
+centrifugal contribution that diverges for $r \to \infty$.
+
+Spin (self–rotation) $\omega$ does contribute to the torsion scalar, but
+in the co–rotating frame implicit in the ansatz its $r$–dependent
+contributions cancel between kinetic and centrifugal terms for static,
+equal–radius configurations.  As a result, $\omega$ does not appear in
+$V(r)$, and its rôle is deferred to the Nieh–Yan sector and the
+precession dynamics discussed in later sections.
+
+%------------------------------------------------------------
+\subsection{Classical stability of the equal–radius handle}
+\label{subsec:phase1-stability}
+
+We now specialise to static equal–radius configurations
+\begin{equation}
+  r(\psi) = r_0 = \text{const.},
+\end{equation}
+for which the gradient term in
+\eqref{eq:effective-energy-functional} vanishes and the energy reduces
+to
+\begin{equation}
+  E[r_0]
+  \;=\;
+  \int_0^{L_\psi} d\psi\, V(r_0)
+  \;=\;
+  L_\psi\, V(r_0).
+  \label{eq:E-equal-radius}
+\end{equation}
+The classical equilibrium radius is thus determined by the extremum
+condition
+\begin{equation}
+  \frac{dV}{dr}\Big|_{r=r_0} = 0.
+\end{equation}
+Using \eqref{eq:effective-potential},
+\begin{equation}
+  \frac{dV}{dr}
+  \;=\;
+  -\,\frac{2B q^2}{r^3} + 2C m^2 r,
+\end{equation}
+so that the extremum satisfies
+\begin{equation}
+  C m^2 r_0^4 = B q^2
+  \qquad\Longrightarrow\qquad
+  r_0^4 = \frac{B q^2}{C m^2}.
+  \label{eq:r0-fourth}
+\end{equation}
+For $q\neq 0$ and $m\neq 0$ this yields a finite, nonzero equilibrium
+radius
+\begin{equation}
+  r_0
+  \;=\;
+  \left(\frac{B}{C}\right)^{1/4}
+  \frac{|q|^{1/2}}{|m|^{1/2}},
+  \label{eq:r0-explicit}
+\end{equation}
+up to a theory–dependent numerical factor $(B/C)^{1/4}$.  In particular,
+for a fixed non–zero twist number $m$ the radius scales as
+\begin{equation}
+  r_0 \;\propto\; |q|^{1/2},
+  \qquad
+  (m \text{ fixed}),
+\end{equation}
+in agreement with the scaling quoted in
+Eq.~\eqref{eq:r0-scaling-intro}.
+
+To check that this extremum is a minimum, we compute the second
+derivative of $V(r)$,
+\begin{equation}
+  \frac{d^2V}{dr^2}
+  \;=\;
+  \frac{6B q^2}{r^4} + 2C m^2.
+\end{equation}
+Evaluating at $r=r_0$ and using \eqref{eq:r0-fourth},
+\begin{equation}
+  \frac{d^2V}{dr^2}\Big|_{r=r_0}
+  \;=\;
+  \frac{6B q^2}{r_0^4} + 2C m^2
+  \;=\;
+  6C m^2 + 2C m^2
+  \;=\;
+  8C m^2 \;>\; 0,
+\end{equation}
+so the equal–radius configuration is indeed a local minimum of the
+effective potential for any $q\neq 0$ and $m\neq 0$.
+
+Small fluctuations $\delta r(\psi)$ around $r_0$ can be analysed by
+expanding \eqref{eq:effective-energy-functional} to quadratic order,
+\begin{equation}
+  r(\psi) = r_0 + \delta r(\psi),
+\end{equation}
+which yields a Sturm–Liouville problem with a positive mass term
+proportional to $d^2V/dr^2|_{r_0}$ and a gradient term controlled by
+the coefficient $A$.  In the regime of interest for DPPU, $A$ is expected
+to be of Planckian order in natural units, so that non–uniform Fourier
+modes of $\delta r$ are heavy and strongly suppressed.  Consequently, in
+the semiclassical regime relevant to DPPU the equal–radius configuration
+$r(\psi)=r_0$ provides an excellent approximation to the true vacuum,
+with radial oscillations confined to sub–Planckian amplitudes.
+(A more detailed estimate of $A$ and the fluctuation spectrum is
+deferred to Appendix~\ref{app:phase1-details}.)
+
+%------------------------------------------------------------
+\subsection{On–shell TEGR energy and linear scaling in $|q|$}
+\label{subsec:phase1-energy-scaling}
+
+We now evaluate the TEGR contribution to the energy on the equal–radius
+solution $r(\psi)=r_0$ determined above.  Substituting
+\eqref{eq:r0-fourth} into \eqref{eq:effective-potential}, we obtain
+\begin{align}
+  V(r_0)
+  &= \frac{B q^2}{r_0^2} + C m^2 r_0^2
+  \nonumber\\[2pt]
+  &= \frac{B q^2}{\bigl(\tfrac{B}{C}\bigr)^{1/2} |q/m|}
+     + C m^2 \bigl(\tfrac{B}{C}\bigr)^{1/2} \Bigl|\frac{q}{m}\Bigr|
+  \nonumber\\[2pt]
+  &= \sqrt{BC}\,|m q| + \sqrt{BC}\,|m q|
+  \nonumber\\[2pt]
+  &= 2\sqrt{BC}\,|m q|.
+  \label{eq:V-r0}
+\end{align}
+The corresponding TEGR energy is
+\begin{equation}
+  E_{\text{TEGR}}(q,m)
+  \;=\;
+  L_\psi\, V(r_0)
+  \;=\;
+  2L_\psi \sqrt{BC}\,|m q|.
+  \label{eq:TEGR-energy-on-shell}
+\end{equation}
+For fixed twist number $m\neq 0$ and handle length $L_\psi$ this implies
+the linear scaling
+\begin{equation}
+  E_{\text{TEGR}}(q)
+  \;\equiv\; E_{\text{TEGR}}(q,m_{\rm fixed})
+  \;\approx\;
+  \alpha\,|q|,
+  \qquad
+  \alpha := 2L_\psi \sqrt{BC}\,|m| > 0.
+  \label{eq:E-TEGR-linear}
+\end{equation}
+Thus, within the Spinning $SU(2)$ handle ansatz, pure TEGR behaves as a
+\emph{geometric mass term} that is linear in the absolute value of the
+monopole charge $q$.  The twist number $m\neq 0$ is required for the
+existence of a stable minimum and sets the overall energy scale, but it
+does not modify the linear dependence on $|q|$.
+
+In particular, the TEGR energy is insensitive to the sign of $q$; it is
+even under parity and charge conjugation, and does not distinguish
+between $q$ and $-q$.  The sign–sensitivity and chirality selection that
+are essential for the DPPU picture therefore cannot come from the TEGR
+sector alone.  They enter through the Nieh--Yan term and its effective
+boundary coupling to the precession mode, which we analyse in Phase~2.

@@ -1,0 +1,610 @@
+\section{Phase 3: Stiffness scaling and critical binding}
+\label{sec:phase3}
+
+In Phase~1 (Sec.~\ref{sec:phase1}) we showed that, within the Spinning
+$SU(2)$ handle ansatz, pure TEGR provides a parity--even geometric
+background with an equal--radius solution whose energy scales as
+\begin{equation}
+  E_{\text{TEGR}}(q) \;\simeq\; \alpha\,|q|
+  \qquad (m\neq 0 \;\text{fixed}),
+  \label{eq:E-TEGR-phase3}
+\end{equation}
+for some positive constant $\alpha$ depending on the twist $m$ and the
+handle length $L_\psi$, see Eq.~\eqref{eq:E-TEGR-linear}.  In Phase~2
+(Sec.~\ref{sec:phase2}) we showed that the Nieh--Yan term, together with
+a slow precession mode $\varepsilon(t)$, induces a chiral tilt
+$\varepsilon_*(q) \propto q / k(q)$ and lowers the energy by an amount
+\begin{equation}
+  \Delta E_{\text{NY}}(q)
+  \;\simeq\;
+  -\,\frac{\Lambda_q^2}{2k(q)},
+  \label{eq:DeltaE-NY-phase3}
+\end{equation}
+where $\Lambda_q \propto q$ and $k(q)$ is the TEGR--induced stiffness of
+the precession mode.
+
+The purpose of Phase~3 is twofold:
+\begin{enumerate}
+  \item to derive the $q$--dependence of $k(q)$ within the Spinning
+        $SU(2)$ handle ansatz and show that, classically,
+        \begin{equation}
+          k(q)
+          \;\propto\;
+          \omega^2 m^2 r_0^2
+          \;\propto\;
+          \omega^2 |q|,
+          \label{eq:kq-scaling-intro}
+        \end{equation}
+        for fixed non--zero twist number $m$, so that the stiffness
+        scales linearly with $|q|$;
+  \item to analyse the resulting total energy
+        \[
+          E(q) \;\simeq\; E_{\text{TEGR}}(q) + \Delta E_{\text{NY}}(q)
+        \]
+        and discuss the near--critical balance between fusion and
+        fission of multi--handle configurations.
+\end{enumerate}
+We will see that the Spinning $SU(2)$ handle sits at a classical
+\emph{critical point} where the TEGR energy and the Nieh--Yan induced
+binding energy scale with the same power of $|q|$.  Small corrections
+to this picture (for example from quantum effects or additional modes)
+are then sufficient to tilt the balance slightly and render composite
+states with $|q|>1$ energetically competitive with separated unit--charge
+handles.
+
+%------------------------------------------------------------
+\subsection{Energy components and a scaling ansatz}
+\label{subsec:phase3-scaling-ansatz}
+
+From Phase~1 we take the TEGR contribution
+\begin{equation}
+  E_{\text{TEGR}}(q) \;=\; \alpha\,|q|,
+  \qquad \alpha>0,
+\end{equation}
+for fixed twist $m\neq 0$ and handle length $L_\psi$.
+
+From Phase~2 we take the Nieh--Yan energy gain
+\begin{equation}
+  \Delta E_{\text{NY}}(q)
+  \;=\;
+  -\,\frac{\Lambda_q^2}{2k(q)},
+\end{equation}
+where the precession minimum $\varepsilon_*(q)$ has already been
+eliminated via Eq.~\eqref{eq:epsilon-star}.  The coefficient
+$\Lambda_q$ is linear in $q$,
+\begin{equation}
+  \Lambda_q \;=\; -\,\gamma_{\text{NY}}\,q,
+  \qquad \gamma_{\text{NY}}>0,
+\end{equation}
+for fixed $m,\omega,\theta_{\text{NY}},\Delta r^2$,
+cf.~Eq.~\eqref{eq:Lambdaq-sign}.  Thus
+\begin{equation}
+  \Delta E_{\text{NY}}(q)
+  \;\propto\;
+  -\,\frac{q^2}{k(q)}.
+  \label{eq:DeltaE-NY-q2-over-k}
+\end{equation}
+
+For the purpose of discussing composite states, it is convenient to
+parameterise the stiffness as a power of $|q|$,
+\begin{equation}
+  k(q)
+  \;\propto\;
+  |q|^\gamma,
+  \label{eq:kq-gamma-ansatz}
+\end{equation}
+with some exponent $\gamma>0$.  Then
+\begin{equation}
+  \Delta E_{\text{NY}}(q)
+  \;\propto\;
+  -\,|q|^{2-\gamma}.
+\end{equation}
+Up to overall positive constants $\alpha,\beta$, the total energy of a
+single handle with charge $q$ can be written as
+\begin{equation}
+  E(q)
+  \;\simeq\;
+  \alpha\,|q|
+  - \beta\,|q|^{2-\gamma},
+  \qquad \alpha,\beta>0,
+  \label{eq:E-q-scaling}
+\end{equation}
+in the regime where the precession mode is well described by the
+harmonic approximation and higher--order corrections in
+$\varepsilon_*$ can be neglected.
+
+In the remainder of this section we first derive the classical value
+$\gamma=1$ within the Spinning $SU(2)$ handle ansatz, and then discuss
+its implications for multi--handle binding.
+
+%------------------------------------------------------------
+\subsection{Classical derivation of $k(q)\propto \omega^2 |q|$}
+\label{subsec:phase3-kq-derivation}
+
+We now sketch how the stiffness scaling
+$k(q)\propto \omega^2 |q|$ arises from the TEGR action evaluated on the
+precessing ansatz.  The detailed calculations, including the full
+$t,\psi$--dependent tetrad and the SymPy implementation, are relegated
+to Appendix~\ref{app:phase3-details}; here we focus on the scaling with
+$q$, $m$ and $\omega$.
+
+\subsubsection*{(i) Ingredients from Phase~1}
+
+From Phase~1 we recall that for the equal--radius background, with
+Spinning $SU(2)$ handle ansatz and twist number $m$, the effective
+TEGR energy reduces to
+\begin{equation}
+  E_{\text{TEGR}}(q)
+  \;=\;
+  L_\psi\,V(r_0),
+\end{equation}
+with
+\begin{equation}
+  V(r)
+  \;=\;
+  \frac{B q^2}{r^2} + C m^2 r^2,
+\end{equation}
+and the equilibrium radius
+\begin{equation}
+  r_0
+  \;=\;
+  \left(\frac{B}{C}\right)^{1/4}
+  \frac{|q|^{1/2}}{|m|^{1/2}}.
+  \label{eq:r0-phase3}
+\end{equation}
+For fixed non--zero $m$ we may absorb the $m$--dependence into the
+numerical prefactor and write, at the level of scaling,
+\begin{equation}
+  r_0^2 \;\propto\; |q|.
+  \label{eq:r0sq-propto-q}
+\end{equation}
+
+\subsubsection*{(ii) Precession as a homogeneous rotation}
+
+In Phase~2 we implemented the precession mode as an additional
+time--dependent $SU(2)$ rotation,
+\begin{equation}
+  U_{\text{prec}}(t)
+  \;=\;
+  \exp\!\left(\frac{i}{2}\,\varepsilon(t)\,\sigma_2\right),
+\end{equation}
+acting on the left of the background configuration, see
+Eq.~\eqref{eq:U-with-prec}.  Via the $SU(2)\to SO(3)$ map, this induces
+a rotation of the spatial triad about the internal 2--axis by the angle
+$\varepsilon(t)$, tilting the handle axis away from the $\psi$--direction
+by $\varepsilon(t)$ while preserving the equal--radius condition
+$r(\psi)=r_0$.
+
+To quadratic order in $\varepsilon$ and its time derivative, the TEGR
+action evaluated on this precessing tetrad contains terms of the form
+\begin{equation}
+  S_{\text{TEGR}}
+  \;\supset\;
+  \int dt\,
+  \Bigl[
+    \frac{1}{2}I(q)\,\dot{\varepsilon}^2
+    - \frac{1}{2}k(q)\,\varepsilon^2
+  \Bigr],
+\end{equation}
+where $I(q)$ is an effective ``moment of inertia'' for the precession
+mode and $k(q)$ is the stiffness appearing in
+Eq.~\eqref{eq:V-TEGR-eps}.  Both $I(q)$ and $k(q)$ are integrals over
+$S^1_\psi\times S^2$ of quadratic combinations of the torsion
+components induced by the precession.
+
+\subsubsection*{(iii) Scaling of the stiffness with $q$, $m$ and $\omega$}
+
+A direct expansion of the torsion scalar $\mathbb{T}$ in powers of
+$\varepsilon$ shows that the dominant contribution to $k(q)$ takes the
+schematic form
+\begin{equation}
+  k(q)
+  \;\sim\;
+  C_k\,
+  \omega^2 m^2\,r_0^2,
+  \qquad C_k>0,
+  \label{eq:kq-m2r0sq}
+\end{equation}
+where $C_k$ is a numerical coefficient depending on the precise
+normalisation and on the integration over $\psi$ and $S^2$.  Intuitively,
+$k(q)$ measures how much TEGR energy is stored in bending a spinning,
+twisted handle away from the $\psi$--axis: the factor $m^2$ reflects the
+cost of tilting a strongly twisted configuration, the factor $r_0^2$
+provides the lever arm, and the factor $\omega^2$ reflects the fact that
+precession couples to the underlying spin.
+
+Using the Phase~1 scaling \eqref{eq:r0sq-propto-q}, we obtain
+\begin{equation}
+  k(q)
+  \;\propto\;
+  \omega^2 m^2\,r_0^2
+  \;\propto\;
+  \omega^2 m^2\,|q|.
+\end{equation}
+For fixed non--zero $m$ this implies
+\begin{equation}
+  k(q)
+  \;\propto\;
+  \omega^2 |q|,
+\end{equation}
+so that the exponent in the scaling ansatz
+\eqref{eq:kq-gamma-ansatz} is
+\begin{equation}
+  \gamma_{\text{classical}} = 1.
+  \label{eq:gamma-equals-one}
+\end{equation}
+
+This is the central result of Phase~3 at the classical level: within the
+Spinning $SU(2)$ handle ansatz, the stiffness of the precession mode is
+linear in $|q|$, with a prefactor controlled by $\omega^2$ (and by $m^2$
+through the overall constant).
+
+%------------------------------------------------------------
+\subsection{Critical binding and multi--handle configurations}
+\label{subsec:phase3-critical-binding}
+
+Combining Eqs.~\eqref{eq:E-TEGR-phase3},
+\eqref{eq:DeltaE-NY-q2-over-k}, and \eqref{eq:kq-m2r0sq}, the total energy
+of a single handle with charge $q$ can be written as
+\begin{equation}
+  E(q)
+  \;\simeq\;
+  \alpha\,|q|
+  - \beta\,|q|^{2-\gamma},
+  \qquad
+  \gamma = 1,
+  \label{eq:E-q-gamma1}
+\end{equation}
+for suitable positive constants $\alpha,\beta$ that encode the details
+of the TEGR and Nieh--Yan couplings as well as $m$ and $\omega$.
+Explicitly, for $\gamma=1$ this is
+\begin{equation}
+  E(q)
+  \;\simeq\;
+  (\alpha-\beta)\,|q|.
+  \label{eq:E-q-linear-effective}
+\end{equation}
+Equivalently, the energy \emph{per unit charge} is
+\begin{equation}
+  \frac{E(q)}{|q|}
+  \;\simeq\;
+  \alpha - \beta,
+\end{equation}
+which is independent of $q$ at leading order.  This ``flatness'' of
+$E(q)/|q|$ in $q$ is the hallmark of a critical point: neither strong
+binding ($\gamma<1$) nor strong repulsion ($\gamma>1$) is favoured
+classically, so that even tiny subleading corrections can decide whether
+states with $|q|>1$ are slightly bound or slightly unbound.
+
+To discuss composite states we compare:
+\begin{itemize}
+  \item a single handle with total charge $q=N$,
+  \item $N$ well--separated handles, each with unit charge $q=1$.
+\end{itemize}
+Using \eqref{eq:E-q-scaling}, the energy of a single $|q|=N$ handle is
+\begin{equation}
+  E(N)
+  \;=\;
+  \alpha N - \beta N^{2-\gamma},
+\end{equation}
+while that of $N$ separated $|q|=1$ handles is
+\begin{equation}
+  N E(1)
+  \;=\;
+  N(\alpha - \beta).
+\end{equation}
+The binding energy of the composite state is therefore
+\begin{equation}
+  E_{\text{bind}}(N)
+  \;:=\;
+  E(N) - N E(1)
+  \;=\;
+  \beta N \left(1 - N^{1-\gamma}\right).
+  \label{eq:Ebind-general}
+\end{equation}
+For $N>1$ and $\beta>0$ one finds:
+\begin{itemize}
+  \item If $\gamma<1$, then $1-\gamma>0$ and $N^{1-\gamma}>1$, so
+        $E_{\text{bind}}(N)<0$: composite states with any $N>1$ are
+        energetically favoured.
+  \item If $\gamma>1$, then $1-\gamma<0$ and $N^{1-\gamma}<1$, so
+        $E_{\text{bind}}(N)>0$: all composite states are unfavoured.
+  \item If $\gamma=1$, then $N^{1-\gamma}=1$ and
+        $E_{\text{bind}}(N)=0$: all composite states are exactly
+        marginal at this order.
+\end{itemize}
+
+Thus the value $\gamma=1$ derived in
+Eq.~\eqref{eq:gamma-equals-one} corresponds to a
+\emph{critical point} separating a regime where fusion of handles is
+generically favoured ($\gamma<1$) from a regime where it is generically
+disfavoured ($\gamma>1$).  At the classical level of the present ansatz,
+the Spinning $SU(2)$ handle sits precisely at this critical point.
+
+Physically, this means that:
+\begin{itemize}
+  \item the TEGR energy, scaling as $\propto |q|$, behaves as a tension
+        that penalises large $|q|$;
+  \item the Nieh--Yan induced attraction, scaling as
+        $\propto - |q|^{2-\gamma}$, competes with this tension;
+  \item for $\gamma=1$ the competition is exactly balanced in the
+        leading power of $|q|$, and subleading corrections decide
+        whether composite states are slightly bound or slightly unbound.
+\end{itemize}
+
+%------------------------------------------------------------
+\subsection{$q=3$ baryon--like states and the rôle of corrections}
+\label{subsec:phase3-q3}
+
+The discussion above shows that within the classical Spinning $SU(2)$
+handle ansatz, the exponent $\gamma$ takes the critical value $\gamma=1$.
+At this level, Eq.~\eqref{eq:Ebind-general} predicts
+\begin{equation}
+  E_{\text{bind}}(N) \;\simeq\; 0
+  \qquad (N>1),
+\end{equation}
+so that composite states are neither clearly favoured nor clearly
+disfavoured by the leading scaling behaviour alone.
+
+In order for a specific composite state, such as $|q|=3$, to become
+\emph{energetically preferred} over three isolated $|q|=1$ handles, we
+require small corrections that effectively shift the exponent away from
+its classical value,
+\begin{equation}
+  \gamma_{\text{eff}} \;\lesssim\; 1,
+\end{equation}
+at least in the range of $q$ relevant to low--charge composites.  In
+that case,
+\begin{equation}
+  E_{\text{bind}}(N)
+  \;\simeq\;
+  \beta N \left(1 - N^{1-\gamma_{\text{eff}}}\right)
+  \;<\; 0
+  \qquad (N>1),
+\end{equation}
+and composite states become slightly bound.
+
+Within the present paper we do not compute $\gamma_{\text{eff}}$ beyond
+the classical level; however, there are several plausible sources of
+such corrections:
+\begin{itemize}
+  \item quantum fluctuations of the precession mode $\varepsilon(t)$ and
+        of the radius $r(\psi)$;
+  \item additional geometric modes that have been frozen in the present
+        ansatz (for example bending of the handle or inhomogeneous
+        deformations);
+  \item couplings to matter fields or to a ``colour'' degree of freedom
+        that distinguish different arrangements of handles with the same
+        total $q$.
+\end{itemize}
+
+The main message of Phase~3 is therefore deliberately modest but
+encouraging:
+\begin{quote}
+  Within the Spinning $SU(2)$ handle ansatz, the classical teleparallel
+  stiffness sits exactly at the critical scaling point $\gamma=1$,
+  where TEGR tension and Nieh--Yan attraction compete on equal footing.
+  Small corrections --- for example from quantum effects --- are then
+  sufficient, in principle, to render composite states with $|q|\ge 2$
+  (in particular $|q|=3$) energetically competitive with separated
+  unit--charge handles.
+\end{quote}
+A detailed exploration of such corrections, and a possible geometric
+selection of $|q|=3$ as a particularly stable ``baryon--like'' charge,
+is left for future work.
+
+%============================================================
+\section{Discussion}
+\label{sec:discussion}
+
+In this section we place the results of Phases~1--3 in a broader
+context, emphasising both the suggestive analogies with known particle
+physics and the limitations of the present toy model.
+
+%------------------------------------------------------------
+\subsection{Relation to Skyrmions and QCD--like phenomenology}
+\label{subsec:discussion-skyrmions}
+
+The microscopic handle picture explored in this paper is reminiscent of
+Skyrmion models of baryons in several respects:
+
+\begin{itemize}
+  \item In the Skyrme model, baryon number arises as a topological
+        charge of an $SU(2)$--valued field on spatial $S^3$, and the
+        Wess--Zumino--Witten (WZW) term controls the statistics of
+        Skyrmions.  In the present work, the monopole charge $q$ plays
+        an analogous rôle as a topological charge associated with torsion
+        flux, while the Nieh--Yan term plays a rôle similar to that of a
+        WZW term in inducing parity--odd effects.
+  \item The stability of Skyrmions is governed by a competition between
+        gradient/tension terms and topological terms in the effective
+        action.  Here, the TEGR energy $\propto |q|$ and the
+        Nieh--Yan--induced energy gain
+        $\Delta E_{\text{NY}}\propto -q^2/k(q)$ compete in an analogous
+        way, with the stiffness $k(q)$ playing the rôle of a geometric
+        coupling.
+  \item In Skyrme phenomenology, $|B|=1$ and $|B|=3$ configurations are
+        of special interest as nucleons and baryons.  In our setting,
+        single--handle states with $|q|=1$ and composite states with
+        $|q|=3$ are natural analogues of ``quark--like'' and
+        ``baryon--like'' structures.
+\end{itemize}
+
+At the same time, there are important differences and limitations:
+
+\begin{itemize}
+  \item The present model is formulated purely in terms of geometry and
+        torsion in teleparallel gravity.  Standard Model fields
+        (quarks, leptons, gauge bosons) are not dynamically included;
+        any connection to real QCD or electroweak physics is therefore
+        indirect and speculative at this stage.
+  \item Our analysis focuses on a highly symmetric ansatz (Spinning
+        $SU(2)$ handle) and a small number of collective coordinates.
+        Generic deformations, interactions between multiple handles, and
+        the full spectrum of excitations have not been explored.
+  \item We have worked entirely at the classical level in the gravity
+        sector.  Quantum corrections, renormalisation of couplings, and
+        the embedding into a UV--complete theory remain open issues.
+\end{itemize}
+
+Fermionic statistics of odd--$q$ states itself is expected to arise from
+an odd WZW level induced by the Nieh--Yan charge on the handle boundary,
+in the spirit of Chandia--Zanelli and Witten
+(see Sec.~\ref{sec:TEGR} and Refs.~\cite{Chandia:1997hu,Witten:1983tw}).
+
+We therefore view the handle picture not as a realistic model of
+baryons, but as a geometric toy model that reproduces a subset of the
+qualitative features of Skyrmion physics in a purely teleparallel
+setting.  The analogies are intriguing, but any phenomenological
+interpretation must be made with caution.
+
+%------------------------------------------------------------
+\subsection{Limitations of the present ansatz and possible extensions}
+\label{subsec:discussion-limitations}
+
+The Spinning $SU(2)$ handle ansatz has been chosen for its mathematical
+simplicity and its ability to make the Nieh--Yan structure explicit.
+However, this simplicity comes with limitations:
+
+\begin{itemize}
+  \item \textbf{Restricted degrees of freedom.}  We have fixed the
+        handle to be straight, with constant radius $r_0$, and allowed
+        only a global precession mode.  Bending modes, inhomogeneous
+        perturbations along $S^1_\psi$, and more general shape
+        deformations could change the energy landscape and the stiffness
+        scaling.
+  \item \textbf{Single--handle focus.}  Our analysis of composite states
+        has treated multi--handle configurations in a coarse--grained
+        way, essentially through a scaling argument in $q$.  A more
+        realistic treatment would require explicit multi--handle
+        solutions and an analysis of their interactions.
+  \item \textbf{Neglect of backreaction.}  We have assumed that the
+        backreaction of the precession mode on the radius $r(\psi)$ and
+        on the surrounding bulk geometry is small.  For large $|q|$ or
+        in dense handle configurations this assumption may break down.
+\end{itemize}
+
+There are several natural directions in which the present ansatz could
+be extended:
+
+\begin{itemize}
+  \item Allowing the radius $r(\psi)$ to vary along the handle and
+        including bending modes, leading to a richer spectrum of
+        collective coordinates.
+  \item Coupling the handle geometry to matter fields, in particular
+        spinor fields, to explore how fermionic degrees of freedom
+        propagate on or are localised by the handle.
+  \item Embedding the microscopic handle picture into a cosmological
+        background, where a finite density of handles could backreact on
+        the large--scale evolution of the universe.
+\end{itemize}
+
+We leave these extensions to future work; they are mentioned here to
+clarify the scope of the present paper.
+
+%------------------------------------------------------------
+\subsection{Future directions: meson--like states, quantum corrections, and cosmology}
+\label{subsec:discussion-future}
+
+Finally, we briefly outline some concrete directions for future
+investigation suggested by the present analysis:
+
+\begin{enumerate}
+  \item \textbf{Meson--like states.}  Composite configurations with
+        total charge $q_{\text{tot}}=0$, built for example from a
+        $q=+1$ and a $q=-1$ handle, are natural candidates for
+        ``meson--like'' states in this geometric picture.  Their
+        stability and spectrum depend sensitively on the interaction
+        between handles of opposite charge and on the sign of the
+        Nieh--Yan coupling.
+  \item \textbf{Quantum corrections and $\gamma_{\text{eff}}$.}  A more
+        systematic computation of quantum corrections to the stiffness
+        $k(q)$ and to the TEGR and Nieh--Yan couplings could determine
+        whether $\gamma_{\text{eff}}$ is indeed slightly below 1 in a
+        realistic setting, and whether this is sufficient to render
+        $|q|=3$ and other composites energetically competitive.
+  \item \textbf{Spinor sector and effective field theory.}  By
+        integrating out microscopic degrees of freedom on a network of
+        handles, one might arrive at an effective field theory in which
+        the handle charge plays the rôle of a topological quantum
+        number, with an emergent chiral fermion spectrum.  This would
+        bring the handle picture closer to phenomenological models.
+  \item \textbf{Cosmological implications.}  If a finite density of
+        microscopic handles is present in the early universe, their
+        collective dynamics and phase transitions (for example across
+        the critical point $\gamma=1$) could leave imprints on
+        cosmological observables.  Exploring such scenarios would
+        require coupling the present model to a dynamical FRW background.
+\end{enumerate}
+
+These directions go well beyond the scope of the present paper, but they
+illustrate how the simple geometric mechanism studied here could serve
+as a starting point for more ambitious constructions.
+
+%============================================================
+\section{Conclusions}
+\label{sec:conclusions}
+
+In this paper we have explored a geometric toy model in which microscopic
+wormhole--like handles in teleparallel gravity, described by a Spinning
+$SU(2)$ ansatz, give rise to a rich interplay between topology,
+chirality, and binding.
+
+Our main results can be summarised as follows:
+\begin{itemize}
+  \item \textbf{Phase~1 (Sec.~\ref{sec:phase1}):}  Within pure TEGR, the
+        Spinning $SU(2)$ handle ansatz admits a classically stable
+        equal--radius configuration with radius
+        $r_0 \propto |q|^{1/2}$ (for fixed twist $m$) and TEGR energy
+        $E_{\text{TEGR}}(q)\propto |q|$.  This provides a parity--even
+        geometric background in which the sign of $q$ is invisible at
+        the level of the TEGR sector alone.
+  \item \textbf{Phase~2 (Sec.~\ref{sec:phase2}):}  Turning on the
+        Nieh--Yan term and introducing a slow precession mode
+        $\varepsilon(t)$ leads to an effective potential
+        \[
+          V_{\text{eff}}(\varepsilon; q)
+          =
+          E_{\text{TEGR}}(q)
+          + \frac{1}{2}k(q)\,\varepsilon^2
+          + \Lambda_q\,\varepsilon
+          + \cdots,
+        \]
+        where $k(q)>0$ is the TEGR stiffness and $\Lambda_q\propto q$
+        encodes the Nieh--Yan coupling.  The ground state develops a
+        small chiral tilt $\varepsilon_*(q)\propto q/k(q)$, so that the
+        sign of the precession is tied to the sign of the topological
+        charge $q$.
+  \item \textbf{Phase~3 (Sec.~\ref{sec:phase3}):}  Evaluating the TEGR
+        action on the precessing ansatz shows that the stiffness scales
+        as $k(q)\propto \omega^2 |q|$ for fixed twist $m$, i.e.\ the
+        exponent in $k(q)\propto |q|^\gamma$ is $\gamma=1$ at the
+        classical level.  As a consequence, the TEGR tension and the
+        Nieh--Yan induced attraction scale with the same power of
+        $|q|$, placing the model at a critical point between generic
+        fusion and generic fission of handles.  Small corrections (for
+        example quantum effects) can then, in principle, render
+        low--charge composites with $|q|\ge 2$ energetically competitive
+        with separated unit--charge handles.
+\end{itemize}
+
+These results do \emph{not} yet constitute a realistic theory of
+fermions or of the Standard Model.  Rather, they demonstrate that within
+a simple teleparallel setting, a single geometric mechanism --- the
+interaction between TEGR and the Nieh--Yan term on a microscopic handle
+--- can simultaneously:
+\begin{itemize}
+  \item endow topological defects with a parity--even ``mass''
+        proportional to $|q|$;
+  \item generate a parity--odd tilt whose sign is locked to the sign of
+        $q$;
+  \item and place the system near a critical point for the binding of
+        composite configurations.
+\end{itemize}
+
+We hope that this toy model can serve as a useful stepping stone toward
+more complete frameworks in which fermionic statistics, chirality, and
+binding emerge from the geometry and topology of spacetime itself.
+Further work will be required to incorporate matter fields, quantum
+effects, and cosmological dynamics, and to assess whether the hints
+found here can be developed into quantitatively predictive models.

@@ -1,0 +1,276 @@
+\section{Spinning $SU(2)$ Handle Ansatz}
+\label{sec:ansatz}
+
+In this section we specify the microscopic geometry of a single handle and
+introduce the \emph{Spinning $SU(2)$ Handle Ansatz} that will be used
+throughout Phases~1--3. The ansatz encodes three charges $(q,m,\omega)$
+and a radius profile $r(\psi)$ in a tetrad field $e^a{}_\mu$ defined on a
+fixed handle topology.
+
+\subsection{Geometry of a single handle}
+\label{subsec:ansatz-geometry}
+
+Locally we model a single microscopic handle as a product manifold
+\begin{equation}
+  M \simeq \mathbb{R}_t \times S^1_\psi \times S^2_{(\theta,\phi)},
+\end{equation}
+with coordinates
+\begin{equation}
+  x^\mu = (t,\psi,\theta,\phi),
+\end{equation}
+where $t$ denotes physical time, $\psi\in[0,2\pi)$ is an angular coordinate
+along the handle axis ($S^1$), and $(\theta,\phi)$ are polar and azimuthal
+angles on the cross--section $S^2$.
+
+We assume that the handle is much smaller than any macroscopic curvature
+scale of the ambient universe, so that background fields may be treated
+as approximately constant over $M$.
+
+As in Phase~1, we keep a single geometric degree of freedom for the
+shape of the handle: the physical radius $r(\psi)$ of the two--sphere
+cross--section as a function of the axial coordinate~$\psi$.
+A rough form of the line element is then
+\begin{equation}
+  ds^2 \sim -dt^2 + d\psi^2
+            + r(\psi)^2\bigl(d\theta^2 + \sin^2\theta\,d\phi^2\bigr),
+  \label{eq:ansatz-metric-rough}
+\end{equation}
+while the exact expression will be encoded in the tetrad defined below.
+In particular, the $q$--dependent terms that implement the torsion flux
+are captured at the tetrad level and are not shown explicitly in
+\eqref{eq:ansatz-metric-rough}.
+
+\subsection{Tetrad construction and parameters}
+\label{subsec:ansatz-tetrad}
+
+We work in the Weitzenb\"ock gauge, so that the spin connection vanishes
+and all gravitational information is carried by the tetrad field
+$e^a{}_\mu$.
+
+The handle ansatz is constructed in two steps:
+we first choose a convenient \emph{reference tetrad} $\tilde e^a{}_\mu$
+with a monopole--like torsion flux, and then act with
+a time-- and angle--dependent spatial rotation derived from an
+$SU(2)$ group element.
+
+\subsubsection*{Reference tetrad and monopole charge $q$}
+
+For definiteness we take the reference tetrad one--forms to be
+\begin{align}
+  \tilde e^0 &= dt, \label{eq:ref-tetrad-0}\\
+  \tilde e^1 &= d\psi, \label{eq:ref-tetrad-1}\\
+  \tilde e^2 &= r(\psi)\,d\theta, \label{eq:ref-tetrad-2}\\
+  \tilde e^3 &= r(\psi)\,\sin\theta\,
+               \bigl(d\phi + q(1-\cos\theta)\,d\psi\bigr).
+               \label{eq:ref-tetrad-3}
+\end{align}
+The resulting metric is approximately of the form
+\eqref{eq:ansatz-metric-rough}; the $q$--dependent mixing term resides
+in $\tilde e^3$ and will play a role only in the torsion sector.
+
+We define $q\in\mathbb{Z}$ as an \emph{integer monopole charge} associated
+with the torsion flux through each cross--section $S^2_\psi$ at fixed
+$(t,\psi)$.
+Concretely, one may impose a normalisation condition of the form
+\begin{equation}
+  \frac{1}{4\pi}\int_{S^2_\psi} \!\!\!\star T^1 = q,
+\end{equation}
+where $T^a = d\tilde e^a$ is the torsion 2--form and $\star$ denotes the
+Hodge dual built from the induced metric.
+In what follows we treat $q$ as a fixed topological input for each handle.
+
+\subsubsection*{$SU(2)$ field and induced rotation}
+
+We introduce an internal $SU(2)$ field
+\begin{equation}
+  U(t,\psi)
+  \;=\;
+  \exp\!\left(i\frac{\omega t}{2}\sigma_1\right)\,
+  \exp\!\left(i\frac{m\psi}{2}\sigma_3\right),
+  \label{eq:SU2-U}
+\end{equation}
+where $\sigma_i$ are the Pauli matrices.
+The first factor implements an intrinsic \emph{spin} in time, while the
+second factor implements a \emph{twist} along the handle axis.
+We therefore refer to \eqref{eq:SU2-U} as a ``spin--then--twist''
+parameterisation.
+
+Via the double cover $SU(2)\to SO(3)$, the field $U(t,\psi)$ defines
+a spatial rotation matrix $\Lambda^i{}_j(t,\psi)$ acting on the spatial
+tetrad indices $i,j=1,2,3$.
+We then define the physical tetrad as
+\begin{equation}
+  e^0 = \tilde e^0,
+  \qquad
+  e^i = \Lambda^i{}_j(t,\psi)\,\tilde e^j,
+  \quad i=1,2,3.
+  \label{eq:phys-tetrad}
+\end{equation}
+In the explicit implementation used in the detailed calculations,
+the rotation factorises as
+\begin{equation}
+  \Lambda(t,\psi) = R_3(m\psi)\,R_1(\omega t),
+  \label{eq:rot-matrix-factor}
+\end{equation}
+so that the spatial basis is first spun around the local
+$\tilde e^1$--axis as time evolves, and then twisted in the
+$(\tilde e^2,\tilde e^3)$--plane as one moves along $\psi$.
+
+A key property of this ordering is that the handle axis vector $e^1$
+remains \emph{time--independent}: the spin acts around the axis rather
+than precessing the axis itself.
+This will allow us to add a small precession mode $\varepsilon(t)$
+in Phase~2 without destabilising the background configuration.
+
+\subsubsection*{Summary of parameters}
+
+The ansatz introduces the following parameters and fields:
+\begin{itemize}
+  \item $q\in\mathbb{Z}$ (flux / monopole charge):
+    integer--quantised torsion flux through the $S^2$ cross--section.
+    It controls the strength of the core repulsion and, via the
+    Nieh--Yan/WZW chain, the effective WZW level in a boundary
+    Skyrme--like description.
+  \item $m\in\mathbb{Z}$ (twist number):
+    twist number along the handle axis; as $\psi$ increases from $0$
+    to $2\pi$, the internal frame rotates $m$ times in the cross--section.
+  \item $\omega\in\mathbb{R}$ (spin):
+    intrinsic spin angular frequency of the handle, defined in the
+    co--moving frame of the twisted handle.
+  \item $r(\psi) > 0$ (radius profile):
+    radius of the $S^2$ cross--section as a function of $\psi$.
+    In Phase~1 we focus on the equal--radius ansatz $r(\psi)=r_0$,
+    while Phases~2 and~3 allow small deformations.
+\end{itemize}
+
+In the TEGR action, $q$, $m$, $\omega$ and $r(\psi)$ control,
+respectively, the flux--induced core energy, the twist energy,
+the spin--related terms, and the elastic energy associated with
+variations of the radius.
+Their scaling behaviours will be analysed in detail in
+Sec.~\ref{sec:phase1} and subsequent sections.
+
+\subsection{Nieh--Yan density as an exact form}
+\label{subsec:ansatz-NY}
+
+In the Weitzenb\"ock geometry adopted here, the Nieh--Yan 4--form
+simplifies to
+\begin{equation}
+  \mathcal N = T^a\wedge T_a = d(e^a\wedge T_a),
+  \label{eq:NY-exact}
+\end{equation}
+and behaves as a torsion--built topological invariant.
+
+For the Spinning $SU(2)$ Handle Ansatz, an explicit calculation of the
+torsion 2--forms $T^a = de^a$ yields a Nieh--Yan density that, up to an
+overall normalisation fixed by the choice of $q$, takes the form
+\begin{align}
+  \mathcal N
+  &\simeq
+  q\,\omega\,m\,
+  \partial_\psi\bigl(r(\psi)^2\bigr)\,
+  dt\wedge d\psi\wedge
+  \sin\theta\,d\theta\wedge d\phi
+  \nonumber\\
+  &=\;
+  q\,\omega\,m\,
+  d\!\bigl(r(\psi)^2\bigr)\wedge dt\wedge d\Omega_2,
+  \label{eq:NY-total-derivative}
+\end{align}
+where $d\Omega_2 = \sin\theta\,d\theta\wedge d\phi$ is the area form
+on the unit $2$--sphere, and $\simeq$ denotes equality up to a
+numerical normalisation that will be fixed once and for all by the
+flux quantisation condition for $q$.
+
+This total--derivative structure has two important consequences.
+
+\paragraph{(i) Boundary sensitivity.}
+Because $\mathcal N$ is an exact form in the $\psi$--direction,
+the Nieh--Yan contribution of a single handle depends only on the
+boundary values of $r^2$ at the ends of the handle (or, more precisely,
+at the joints where the handle is glued to the ambient manifold):
+\begin{equation}
+  \int_M \mathcal N
+  \;\propto\;
+  q\,\omega\,m\,
+  \bigl[r(\psi)^2\bigr]_{\psi\text{--endpoints}}.
+  \label{eq:NY-boundary}
+\end{equation}
+For a microscopic handle that is nearly cylindrical in its interior,
+the contribution is thus localised near the joints.
+
+\paragraph{(ii) Effective WZW level.}
+We emphasise that $q$ is defined independently, as the integer monopole
+charge of the torsion flux in the reference tetrad, and is \emph{not}
+redefined via the Nieh--Yan integral.
+
+Instead, we interpret the Nieh--Yan integral as a measure of an
+effective WZW--like level seen by a boundary Skyrme field.
+For a single handle, the scaling behaviour implied by
+\eqref{eq:NY-total-derivative} can be summarised as
+\begin{equation}
+  \int_M \mathcal N
+  \;\propto\;
+  q\,\omega\,m\,
+  \Delta\!\bigl(r^2\bigr),
+  \label{eq:NY-WZW-scaling}
+\end{equation}
+where $\Delta(r^2)$ denotes the jump of $r^2$ between the two ends of
+the handle.
+In the multi--handle ensemble considered in later sections, the sum of
+such contributions determines the effective WZW level that appears in
+the boundary chiral action.
+This underlies the anomaly--matching picture developed in
+Sec.~\ref{sec:boundary}.
+
+The detailed derivation of \eqref{eq:NY-total-derivative} from the
+tetrad \eqref{eq:ref-tetrad-0}--\eqref{eq:ref-tetrad-3} and
+\eqref{eq:phys-tetrad}--\eqref{eq:rot-matrix-factor} is straightforward
+but lengthy; it is relegated to Appendix~B.
+
+\subsection{Static versus spinning ans\"atze}
+\label{subsec:ansatz-static-vs-spinning}
+
+It is instructive to contrast the spinning ansatz above with more
+naive alternatives.
+
+If one sets $\omega=0$ and keeps only a static twist
+$U(\psi)=\exp(i m\psi\,\sigma_3/2)$, the Nieh--Yan density
+\eqref{eq:NY-total-derivative} loses the cross term proportional to
+$\omega m$.
+In such a purely twisted configuration the handle still carries a
+flux $q$, but the Nieh--Yan density no longer exhibits the simple
+total--derivative structure that makes the identification of an
+effective WZW level transparent.
+
+Conversely, if one tries to encode precession by letting the handle
+axis itself rotate in time with respect to a fixed laboratory frame,
+the tetrad becomes time--dependent already at the level of the axis
+vector $e^1$.
+This leads to an unnecessarily complicated TEGR energy functional and
+obscures the separation between
+\begin{itemize}
+  \item the \emph{background} spinning handle
+        (characterised by $q,m,\omega,r(\psi)$), and
+  \item the \emph{small precession mode} $\varepsilon(t)$ that we
+        introduce in Phase~2.
+\end{itemize}
+
+The present Spinning $SU(2)$ Handle Ansatz avoids both problems:
+\begin{itemize}
+  \item the axis $e^1$ is time--independent, so that a small tilt
+        $\varepsilon(t)$ can be added cleanly on top of the spinning
+        background, and
+  \item the Nieh--Yan density acquires the exact--form structure
+        \eqref{eq:NY-total-derivative}, which allows us to treat
+        $\int_M\mathcal N$ as a bona fide contribution to an effective
+        WZW level in the boundary theory.
+\end{itemize}
+
+For these reasons we adopt the spinning ansatz
+\eqref{eq:ref-tetrad-0}--\eqref{eq:ref-tetrad-3} and
+\eqref{eq:SU2-U}--\eqref{eq:rot-matrix-factor} as our
+\emph{canonical microscopic geometry} for a single handle, and relegate
+static variants and precessing laboratory--frame configurations to
+Appendix~F.
+

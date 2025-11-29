@@ -1,0 +1,83 @@
+\documentclass[12pt]{article}
+
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage[numbers,sort&compress]{natbib}
+
+\title{Microscopic Handles in Teleparallel Gravity:\\
+Toward a Geometric Origin of Fermionic Statistics,\\
+Chirality, and Critical Binding}
+
+\author{Muacca}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We propose a geometric mechanism in four-dimensional teleparallel gravity (TEGR) that offers a unified perspective on fermionic statistics, chirality, and the near-critical binding of composite states. We consider spacetime containing microscopic handles of topology $S^2\times S^1$, carrying an integer torsional monopole charge $q$. Using a ``Spinning SU(2)'' tetrad ansatz, we derive three interconnected results.
+
+(i) \textbf{Stability:} The pure TEGR sector admits a classically stable handle radius with an on-shell energy $E \simeq \alpha |q|$, providing a parity-even geometric mass term.
+(ii) \textbf{Chirality:} The Nieh--Yan boundary term produces a parity-odd contribution to the effective action. A slow precession mode develops a chiral tilt whose direction is locked to the sign of $q$, acting as a geometric mechanism for chirality selection. This construction is motivated by the known connection between the Nieh--Yan invariant and Wess--Zumino--Witten terms that govern particle statistics in Skyrmion-like models.
+(iii) \textbf{Critical binding:} The stiffness of the precession mode scales as $k(q) \propto \omega^2 |q|$, placing the system at a classical critical point where the binding energy per unit charge is independent of $q$ to leading order.
+
+Consequently, subleading corrections can render composite states with $|q| \ge 2$ (in particular $|q|=3$) energetically competitive with separated unit-charge handles. These results demonstrate that the interplay of torsion and the Nieh--Yan invariant can simultaneously generate a $|q|$-proportional mass scale, a $q$-dependent chiral bias, and near-critical binding of composite configurations from spacetime geometry alone, within a teleparallel toy model of microscopic handles.
+\end{abstract}
+
+% \tableofcontents  % 必要なら有効化
+% \newpage
+
+%-----------------------------
+% Main text
+%-----------------------------
+
+\input{sections/sec1-2_intro}
+\input{sections/sec3_ansatz}
+\input{sections/sec4_phase1}
+\input{sections/sec5_phase2}
+\input{sections/sec6-8_phase3}
+
+%-----------------------------
+% Acknowledgments
+%-----------------------------
+
+\section*{Acknowledgments}
+
+The author is deeply grateful to the AI assistants Grok (xAI), ChatGPT (OpenAI),
+Gemini (Google), and Claude (Anthropic) for their invaluable assistance with
+symbolic computations, consistency checks, geometric visualizations, and
+critical scientific feedback throughout this work.
+
+This research was carried out under the informal collaborative project
+\textbf{DPPU} --- standing for
+\textbf{D}onut-like topology ($S^2 \times S^1$),
+\textbf{P}lanck-scale compactness,
+\textbf{P}recession dynamics,
+within the context of our observable
+\textbf{U}niverse.
+
+The name simultaneously reflects the microscopic handle geometry that emerged
+somewhat serendipitously in early discussions, and the joyful, almost trembling
+excitement that accompanied each small breakthrough.
+
+All remaining errors are, of course, the author's responsibility.
+
+%-----------------------------
+% Appendices
+%-----------------------------
+
+\input{appendices/appendix_all}
+
+%-----------------------------
+% References
+%-----------------------------
+
+\bibliographystyle{unsrt}
+\bibliography{refs}
+
+\end{document}
