@@ -2,7 +2,8 @@
 
 このファイルは日本語版の README です。  
 英語版 README は以下をご覧ください：  
-➡️ [English README](./README.md)
+- ➡️ [English README](./README.md)
+- ➡📄 論文PDF: [main.pdf](./main.pdf)
 
 ---
 

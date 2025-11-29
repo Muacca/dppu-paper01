@@ -2,7 +2,8 @@
 
 This is the English README.  
 For the Japanese version, see:  
-➡️ [日本語版 README](./README_ja.md)
+- ➡️ [日本語版 README](./README_ja.md)
+- ➡📄 paper PDF: [main.pdf](./main.pdf)
 
 ---
 
