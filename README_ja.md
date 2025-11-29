@@ -14,10 +14,9 @@
 - 論文本体の LaTeX ソース（本文＋付録）
 - Appendix E で用いた SymPy スクリプトとそのログ
 
-を公開するためのものです。:contentReference[oaicite:0]{index=0}  
+を公開するためのものです。
 
-第一論文では、テレパラレル重力（TEGR）の枠組みの中で、  
-トーショナル単極電荷をもつ微視的ハンドル（$S^2 \times S^1$ 拓撲）を用いて、
+第一論文では、テレパラレル重力（TEGR）の枠組みの中で、トーショナル単極電荷をもつ微視的ハンドル（$S^2 \times S^1$ ）を用いて、
 
 - 安定なハンドル半径と $E \propto |q|$ な質量スケール
 - Nieh–Yan 項を介したカイラリティ（左右非対称性）の選択
@@ -30,18 +29,18 @@
 ## 構成
 
 - `paper/`  
-  論文の LaTeX ソース一式です（本文セクションと各 Appendix、参考文献、図ファイルなど）。:contentReference[oaicite:1]{index=1}  
+  論文の LaTeX ソース一式です（本文セクションと各 Appendix、参考文献、図ファイルなど）。
 
 - `code/`  
   Appendix E で用いた SymPy スクリプトと、その実行ログです。  
-  フェーズ 3 における剛性 $k(q)$ の導出や、$q^2 \varepsilon^2$ 項のキャンセル確認に対応しています。:contentReference[oaicite:2]{index=2}  
+  フェーズ 3 における剛性 $k(q)$ の導出や、$q^2 \varepsilon^2$ 項のキャンセル確認に対応しています。
 
 ---
 
 ## ビルド方法
 
 LaTeX のビルドには `latexmk` の利用を想定しています。  
-典型的なビルド手順は次の通りです：:contentReference[oaicite:3]{index=3}  
+典型的なビルド手順は次の通りです：
 
 ```bash
 cd paper
