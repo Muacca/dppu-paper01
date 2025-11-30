@@ -4,6 +4,7 @@
 英語版 README は以下をご覧ください：  
 - ➡️ [English README](./README.md)
 - ➡📄 論文PDF: [main_ja.pdf](./main_ja.pdf)
+- DOI: [10.5281/zenodo.17762205](https://doi.org/10.5281/zenodo.17762205)
 
 ---
 
@@ -79,5 +80,6 @@ Appendix E の計算に対応する SymPy スクリプトと、
 * `paper/` 配下の **テキスト・図・LaTeX ソース** は
   Creative Commons Attribution 4.0 International（CC BY 4.0）ライセンスの下で公開されています
   （詳細は `LICENSE-text` を参照してください）。
+
 
 
