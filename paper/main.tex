@@ -12,7 +12,8 @@
 Toward a Geometric Origin of Fermionic Statistics,\\
 Chirality, and Critical Binding}
 
-\author{Muacca}
+\author{Muacca\\
+\texttt{muacca@dmwp.jp}}
 \date{\today}
 
 \begin{document}
@@ -20,13 +21,33 @@ Chirality, and Critical Binding}
 \maketitle
 
 \begin{abstract}
-We propose a geometric mechanism in four-dimensional teleparallel gravity (TEGR) that offers a unified perspective on fermionic statistics, chirality, and the near-critical binding of composite states. We consider spacetime containing microscopic handles of topology $S^2\times S^1$, carrying an integer torsional monopole charge $q$. Using a ``Spinning SU(2)'' tetrad ansatz, we derive three interconnected results.
+We propose a geometric mechanism in four-dimensional teleparallel gravity (TEGR)
+that offers a unified perspective on fermionic statistics, chirality, and the
+near-critical binding of composite states. We consider spacetime containing
+microscopic handles of topology $S^2\times S^1$, carrying an integer torsional
+monopole charge $q$. Using a ``Spinning SU(2)'' tetrad ansatz, we derive three
+interconnected results.
 
-(i) \textbf{Stability:} The pure TEGR sector admits a classically stable handle radius with an on-shell energy $E \simeq \alpha |q|$, providing a parity-even geometric mass term.
-(ii) \textbf{Chirality:} The Nieh--Yan boundary term produces a parity-odd contribution to the effective action. A slow precession mode develops a chiral tilt whose direction is locked to the sign of $q$, acting as a geometric mechanism for chirality selection. This construction is motivated by the known connection between the Nieh--Yan invariant and Wess--Zumino--Witten terms that govern particle statistics in Skyrmion-like models.
-(iii) \textbf{Critical binding:} The stiffness of the precession mode scales as $k(q) \propto \omega^2 |q|$, placing the system at a classical critical point where the binding energy per unit charge is independent of $q$ to leading order.
+(i) \textbf{Stability:} The pure TEGR sector admits a classically stable handle
+radius with an on-shell energy $E \simeq \alpha |q|$, providing a parity-even
+geometric mass term. (ii) \textbf{Chirality:} The Nieh--Yan boundary term
+produces a parity-odd contribution to the effective action. A slow precession
+mode develops a chiral tilt whose direction is locked to the sign of $q$,
+acting as a geometric mechanism for chirality selection. This construction is
+motivated by the known connection between the Nieh--Yan invariant and
+Wess--Zumino--Witten terms that govern particle statistics in Skyrmion-like
+models. (iii) \textbf{Classical criticality:} The stiffness of the precession
+mode scales as $k(q) \propto \omega^2 |q|$, placing the system at a
+\emph{classical} critical point where the binding energy per unit charge is
+independent of $q$ to leading order.
 
-Consequently, subleading corrections can render composite states with $|q| \ge 2$ (in particular $|q|=3$) energetically competitive with separated unit-charge handles. These results demonstrate that the interplay of torsion and the Nieh--Yan invariant can simultaneously generate a $|q|$-proportional mass scale, a $q$-dependent chiral bias, and near-critical binding of composite configurations from spacetime geometry alone, within a teleparallel toy model of microscopic handles.
+Consequently, subleading corrections could in principle render composite
+states with $|q| \ge 2$ (in particular $|q|=3$) energetically competitive with
+separated unit-charge handles. We regard the present construction as a
+teleparallel toy model that establishes the classical critical point
+$\gamma=1$ from geometry alone; the impact of quantum and geometric
+corrections on an effective exponent $\gamma_{\mathrm{eff}}$ will be analysed
+in a separate work.
 \end{abstract}
 
 % \tableofcontents  % 必要なら有効化
@@ -41,6 +62,17 @@ Consequently, subleading corrections can render composite states with $|q| \ge 2
 \input{sections/sec4_phase1}
 \input{sections/sec5_phase2}
 \input{sections/sec6-8_phase3}
+
+%-----------------------------
+% Code availability
+%-----------------------------
+
+\section*{Code availability}
+All symbolic computations in this work were performed using custom
+SymPy scripts. These scripts are included as supplementary files in the
+Zenodo record associated with this preprint:
+\href{https://doi.org/10.5281/zenodo.17762205}{doi:10.5281/zenodo.17762205}.
+
 
 %-----------------------------
 % Acknowledgments

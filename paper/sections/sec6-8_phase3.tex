@@ -125,7 +125,7 @@ We now sketch how the stiffness scaling
 $k(q)\propto \omega^2 |q|$ arises from the TEGR action evaluated on the
 precessing ansatz.  The detailed calculations, including the full
 $t,\psi$--dependent tetrad and the SymPy implementation, are relegated
-to Appendix~\ref{app:phase3-details}; here we focus on the scaling with
+to Appendix~\ref{app:phase3-calc}; here we focus on the scaling with
 $q$, $m$ and $\omega$.
 
 \subsubsection*{(i) Ingredients from Phase~1}
@@ -196,22 +196,25 @@ components induced by the precession.
 
 A direct expansion of the torsion scalar $\mathbb{T}$ in powers of
 $\varepsilon$ shows that the dominant contribution to $k(q)$ takes the
-schematic form
+form
 \begin{equation}
   k(q)
-  \;\sim\;
-  C_k\,
-  \omega^2 m^2\,r_0^2,
-  \qquad C_k>0,
+  \;=\;
+  \frac{8\pi}{9}\, L_\psi \, m^2 \omega^2 r_0^2
+  \;=\;
+  \frac{8\pi}{9}\, L_\psi \, m^2 \omega^2 \alpha |q|
+  \;\propto\; \omega^2 |q| \,,
   \label{eq:kq-m2r0sq}
 \end{equation}
-where $C_k$ is a numerical coefficient depending on the precise
-normalisation and on the integration over $\psi$ and $S^2$.  Intuitively,
-$k(q)$ measures how much TEGR energy is stored in bending a spinning,
-twisted handle away from the $\psi$--axis: the factor $m^2$ reflects the
-cost of tilting a strongly twisted configuration, the factor $r_0^2$
-provides the lever arm, and the factor $\omega^2$ reflects the fact that
-precession couples to the underlying spin.
+where $L_\psi$ is the effective length of the handle in the $\psi$ direction,
+$\alpha$ is the proportionality constant from Phase~1 relating
+$r_0^2 = \alpha |q|$, and the numerical factor $8\pi/9$ arises from the
+detailed angular integration over $S^2$ (see Appendix~\ref{app:phase3-calc}).
+Intuitively, $k(q)$ measures how much TEGR energy is stored in bending a
+spinning, twisted handle away from the $\psi$--axis: the factor $m^2$
+reflects the cost of tilting a strongly twisted configuration, the factor
+$r_0^2$ provides the lever arm, and the factor $\omega^2$ reflects the fact
+that precession couples to the underlying spin.
 
 Using the Phase~1 scaling \eqref{eq:r0sq-propto-q}, we obtain
 \begin{equation}
@@ -238,6 +241,39 @@ This is the central result of Phase~3 at the classical level: within the
 Spinning $SU(2)$ handle ansatz, the stiffness of the precession mode is
 linear in $|q|$, with a prefactor controlled by $\omega^2$ (and by $m^2$
 through the overall constant).
+
+%------------------------------------------------------------
+\subsection{Symmetry protection of the monopole sector}
+\label{subsec:symmetry_protection}
+
+The scaling $k(q) \propto \omega^2 |q|$ derived above may look, at first sight,
+like the outcome of a delicate cancellation between many torsion components.
+In fact, in the present monopole ansatz it is protected by the residual
+$SO(3)$ symmetry of the $S^2$ base.
+
+The background tetrad describes a torsional monopole whose flux through each
+$S^2$ is proportional to $q$. This flux distribution is spherically symmetric:
+all directions on the two-sphere are equivalent. The precession mode we
+consider is a rigid $SU(2)$ rotation of the internal frame which tilts the
+handle axis by a small angle $\varepsilon$ while keeping the monopole charge
+fixed. In other words, the perturbation corresponds to a global rotation of
+the monopole configuration on $S^2$ rather than a local deformation which
+would distort the flux distribution.
+
+In such a situation, the $SO(3)$ symmetry forbids any quadratic term of the
+form $q^2 \varepsilon^2$ in the effective potential. A term proportional to
+$q^2 \varepsilon^2$ would single out a preferred direction on $S^2$ and thus
+explicitly break the rotational invariance of the monopole background. This
+expectation is borne out explicitly by our SymPy calculation in
+Appendix~\ref{app:phase3-calc}: when the torsion tensor is expanded to
+second order in $\varepsilon$, all contributions proportional to
+$q^2 \varepsilon^2$ cancel identically in the integrated energy. The leading
+stiffness is therefore linear in $|q|$, as given in
+Eq.~\eqref{eq:kq-m2r0sq}, with a positive constant whose explicit value is
+fixed by the detailed form of the ansatz. Within our toy model, the classical
+critical exponent $\gamma=1$ is thus not an accident of a particular gauge
+choice, but a consequence of the residual spherical symmetry of the torsional
+monopole sector.
 
 %------------------------------------------------------------
 \subsection{Critical binding and multi--handle configurations}
@@ -333,65 +369,34 @@ Physically, this means that:
 \end{itemize}
 
 %------------------------------------------------------------
-\subsection{$q=3$ baryon--like states and the rôle of corrections}
+\subsection{On the role of corrections and effective exponents}
 \label{subsec:phase3-q3}
 
-The discussion above shows that within the classical Spinning $SU(2)$
-handle ansatz, the exponent $\gamma$ takes the critical value $\gamma=1$.
-At this level, Eq.~\eqref{eq:Ebind-general} predicts
-\begin{equation}
-  E_{\text{bind}}(N) \;\simeq\; 0
-  \qquad (N>1),
-\end{equation}
-so that composite states are neither clearly favoured nor clearly
-disfavoured by the leading scaling behaviour alone.
+At the classical level, within our specific spinning-handle ansatz, the
+stiffness scales as $k(q) \propto \omega^2 |q|$ and the binding energy per
+unit charge is independent of $q$ to leading order. In the language of
+critical phenomena, this corresponds to a classical critical exponent
+$\gamma = 1$ for the dependence of the effective potential on the total
+charge. This result is robust against small deformations of the ansatz
+which preserve the monopole symmetry, as discussed in
+Sec.~\ref{subsec:symmetry_protection}.
 
-In order for a specific composite state, such as $|q|=3$, to become
-\emph{energetically preferred} over three isolated $|q|=1$ handles, we
-require small corrections that effectively shift the exponent away from
-its classical value,
-\begin{equation}
-  \gamma_{\text{eff}} \;\lesssim\; 1,
-\end{equation}
-at least in the range of $q$ relevant to low--charge composites.  In
-that case,
-\begin{equation}
-  E_{\text{bind}}(N)
-  \;\simeq\;
-  \beta N \left(1 - N^{1-\gamma_{\text{eff}}}\right)
-  \;<\; 0
-  \qquad (N>1),
-\end{equation}
-and composite states become slightly bound.
+From the point of view of multi-handle bound states, the case $\gamma = 1$
+is precisely the borderline between dispersal and clustering: the energy per
+unit charge does not favour either large composites or widely separated
+unit-charge handles. It is therefore natural to ask whether additional
+effects --- quantum corrections, bending and shape modes of the handle, or
+couplings to matter fields --- could shift the effective exponent away from
+its classical value and thereby tilt the balance in favour of certain
+composite charges (for example $|q|=3$).
 
-Within the present paper we do not compute $\gamma_{\text{eff}}$ beyond
-the classical level; however, there are several plausible sources of
-such corrections:
-\begin{itemize}
-  \item quantum fluctuations of the precession mode $\varepsilon(t)$ and
-        of the radius $r(\psi)$;
-  \item additional geometric modes that have been frozen in the present
-        ansatz (for example bending of the handle or inhomogeneous
-        deformations);
-  \item couplings to matter fields or to a ``colour'' degree of freedom
-        that distinguish different arrangements of handles with the same
-        total $q$.
-\end{itemize}
-
-The main message of Phase~3 is therefore deliberately modest but
-encouraging:
-\begin{quote}
-  Within the Spinning $SU(2)$ handle ansatz, the classical teleparallel
-  stiffness sits exactly at the critical scaling point $\gamma=1$,
-  where TEGR tension and Nieh--Yan attraction compete on equal footing.
-  Small corrections --- for example from quantum effects --- are then
-  sufficient, in principle, to render composite states with $|q|\ge 2$
-  (in particular $|q|=3$) energetically competitive with separated
-  unit--charge handles.
-\end{quote}
-A detailed exploration of such corrections, and a possible geometric
-selection of $|q|=3$ as a particularly stable ``baryon--like'' charge,
-is left for future work.
+Answering this question in any quantitative sense, however, goes beyond the
+scope of the present work. Here we restrict ourselves to establishing the
+classical critical point $\gamma=1$ within a controlled teleparallel toy
+model. A systematic analysis of possible corrections (including bending
+modes and quantum fluctuations around the spinning background) and their
+impact on an effective exponent $\gamma_{\mathrm{eff}}$ will be developed
+in a separate work.
 
 %============================================================
 \section{Discussion}
