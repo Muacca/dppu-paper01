@@ -4,7 +4,7 @@ This is the English README.
 For the Japanese version, see:  
 - ➡️ [日本語版 README](./README_ja.md)
 - ➡📄 paper PDF: [main.pdf](./main.pdf)
-- DOI: [10.5281/zenodo.17762205](https://doi.org/10.5281/zenodo.17762205)
+- DOI: [10.5281/zenodo.17762204](https://doi.org/10.5281/zenodo.17762204)
 
 ---
 
@@ -74,6 +74,7 @@ This repository uses different licenses for code and text:
 * All **text, figures, and LaTeX sources** under `paper/` are released under the
   Creative Commons Attribution 4.0 International License (CC BY 4.0;
   see `LICENSE-text`).
+
 
 
 
