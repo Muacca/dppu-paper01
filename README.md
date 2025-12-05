@@ -1,8 +1,6 @@
 # DPPU Paper 1: Microscopic Handles in Teleparallel Gravity
 
-**===================================================**
-**It was withdrawn after a fatal error was discovered.**
-**===================================================**
+# **CATION!! -- It was withdrawn after a fatal error was discovered.**
 
 This is the English README.  
 For the Japanese version, see:  
@@ -77,6 +75,7 @@ This repository uses different licenses for code and text:
 * All **text, figures, and LaTeX sources** under `paper/` are released under the
   Creative Commons Attribution 4.0 International License (CC BY 4.0;
   see `LICENSE-text`).
+
 
 
 
